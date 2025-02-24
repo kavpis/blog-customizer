@@ -72,7 +72,8 @@
 		"commit": "npm run test && cz",
 		"storybook": "storybook dev -p 6006",
 		"build:pages": "cross-env NODE_ENV=pages webpack --config webpack/webpack.pages.js --env env=pages",
-		"deploy": "npm run build:pages && gh-pages -d dist",
+		"predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages",
 		"build-storybook": "storybook build"
 	},
 	"eslintConfig": {
