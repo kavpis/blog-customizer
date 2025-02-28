@@ -32,9 +32,19 @@
 	cursor: pointer;
 
 	&:hover {
-		background: var(--accent-light-color, #ffc802);
+		background: var(--accent-light-color, #ffedab);
 	}
-	.label.active {
-		background-color: #FFC802; /* Подсветка желтым цветом */
-	}
+}
+.item:last-child .label {
+	border: none;
+}
+
+.item[data-checked='true'] .label {
+	background: var(--accent-color, #ffc802);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 4px;
 }
