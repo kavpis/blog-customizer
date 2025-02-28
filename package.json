@@ -71,10 +71,9 @@
 		"prepare": "husky install",
 		"commit": "npm run test && cz",
 		"storybook": "storybook dev -p 6006",
+	 	"build-storybook": "storybook build",
 		"build:pages": "cross-env NODE_ENV=pages webpack --config webpack/webpack.pages.js --env env=pages",
-		"predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b gh-pages",
-		"build-storybook": "storybook build"
+		"deploy": "npm run build:pages && gh-pages -d dist"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -96,5 +95,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"homepage": "./"
+	"homepage": "https://kavpis.github.io/blog-customizer/"
 }
