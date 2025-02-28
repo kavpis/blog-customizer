@@ -8,24 +8,20 @@
 	text-align: center;
 	border: 1px solid #000000;
 	cursor: pointer;
-}
 
-.button_apply {
-	background-color: #ffc802;
-}
+	&[type='submit'] {
+		background: var(--accent-color, #ffc802);
+	}
 
-.button_clear {
-	background-color: white;
-}
+	&[type='submit']:hover {
+		background: var(--accent-light-color, #ffc802);
+	}
 
-.button_apply:hover {
-	background-color: #ffedab;
-}
+	&[type='reset'] {
+		background: white;
+	}
 
-.button_clear:hover {
-	background-color: #000000;
-}
-
-.button_clear:hover div {
-	color: white;
+	&[type='reset']:hover {
+		filter: invert(1);
+	}
 }

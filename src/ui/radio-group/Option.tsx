@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { OptionType } from 'src/constants/articleProps';
 import { Text } from 'src/ui/text';
 import { useEnterSubmit } from './hooks/useEnterSubmit';
-
 import styles from './RadioGroup.module.scss';
 
 type OptionProps = {
@@ -16,10 +15,15 @@ type OptionProps = {
 
 export const Option = (props: OptionProps) => {
 	const { value, title, selected, groupName, onChange, option } = props;
-
+  // Создаем ссылку на элемент div для работы с DOM-узлом
 	const optionRef = useRef<HTMLDivElement>(null);
 
-	const handleChange = () => onChange?.(option);
+  // Функция обработки изменения выбранного значения
+  	const handleChange = () => {
+    	if (onChange) {
+    		onChange(option); // Вызываем коллбэк onChange с передачей текущего option
+  		}
+ 	};
 
 	useEnterSubmit({ onChange, option });
 
@@ -34,6 +38,7 @@ export const Option = (props: OptionProps) => {
 			data-testid={inputId}
 			tabIndex={0}
 			ref={optionRef}>
+			{}
 			<input
 				className={styles.input}
 				type='radio'
@@ -43,7 +48,9 @@ export const Option = (props: OptionProps) => {
 				onChange={handleChange}
 				tabIndex={-1}
 			/>
+			{}
 			<label className={styles.label} htmlFor={inputId}>
+			{}
 				<Text size={18} uppercase>
 					{title}
 				</Text>
