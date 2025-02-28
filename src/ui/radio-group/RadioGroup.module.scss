@@ -34,4 +34,7 @@
 	&:hover {
 		background: var(--accent-light-color, #ffc802);
 	}
+	.label.active {
+		background-color: #FFC802; /* Подсветка желтым цветом */
+	}
 }

@@ -59,18 +59,18 @@ export const ArticleParamsForm = ({ onChange }: Props) => {
           onReset={handleResetsettings}> {/* Обработчик сброса формы */}
           {/* Заголовок формы */}
           <Text as='p' size={31} weight={800} uppercase={true}>
-            Настройте параметры статьи
+		  	Задайте параметры
           </Text>
           {/* Выбор шрифта */}
           <Select
-            title='Семейство шрифтов'
+            title='шрифт'
             options={fontFamilyOptions}
             selected={currentParams.fontFamilyOption}
             onChange={(selected) => handleOptionChange('fontFamilyOption', selected)}
           />
           {/* Выбор размера шрифта */}
           <RadioGroup
-            title='Размер текста'
+            title='Размер шрифта'
             options={fontSizeOptions}
             selected={currentParams.fontSizeOption}
             onChange={(selected) => handleOptionChange('fontSizeOption', selected)}
@@ -78,7 +78,7 @@ export const ArticleParamsForm = ({ onChange }: Props) => {
           />
           {/* Выбор цвета шрифта */}
           <Select
-            title='Цвет текста'
+            title='Цвет шрифта'
             options={fontColors}
             selected={currentParams.fontColor}
             onChange={(selected) => handleOptionChange('fontColor', selected)}
@@ -87,21 +87,21 @@ export const ArticleParamsForm = ({ onChange }: Props) => {
           <Separator />
           {/* Выбор цвета фона */}
           <Select
-            title='Фоновый цвет'
+            title='Цвет фона'
             options={backgroundColors}
             selected={currentParams.backgroundColor}
             onChange={(selected) => handleOptionChange('backgroundColor', selected)}
           />
           {/* Выбор ширины контента */}
           <Select
-            title='Ширина содержимого'
+            title='Ширина контента'
             options={contentWidthArr}
             selected={currentParams.contentWidth}
             onChange={(selected) => handleOptionChange('contentWidth', selected)}
           />
           {/* Контейнер с кнопками */}
           <div className={styles.bottomContainer}>
-            <Button title='Очистить' type='reset' />
+            <Button title='Сбросить' type='reset' />
             <Button title='Применить' type='submit' />
           </div>
         </form>

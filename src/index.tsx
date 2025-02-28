@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 import './styles/index.scss';
-import { App } from './ui/app';// Подключаем главный компонент приложения
+import { App } from './components/app';// Подключаем главный компонент приложения
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
